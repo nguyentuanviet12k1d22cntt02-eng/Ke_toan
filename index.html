@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Debt Collection Learning Hub | Trung Tâm Thực Hành Quản Lý Nợ AI</title>
+  <meta name="description" content="Nền tảng học tập và thực hành toàn diện về ứng dụng AI trong quản lý và xử lý nợ ngân hàng - 12 tình huống thực chiến, 500 khách hàng và kiểm toán quyết định AI.">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/learning.css">
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-group">
+        <div class="brand-logo" aria-hidden="true">AI</div>
+        <div class="brand-info">
+          <h1>AI Debt Collection Hub</h1>
+          <p>Hệ Thống Thực Hành Quản Lý & Xử Lý Nợ Ngân Hàng</p>
+        </div>
+      </div>
+
+      <!-- MAIN NAVIGATION TABS -->
+      <nav class="nav-tabs" role="tablist" aria-label="Điều hướng chính">
+        <button class="nav-tab-btn active" data-tab="tab-curriculum" role="tab" aria-selected="true" id="nav-curriculum">
+          <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          12 Buổi Thực Hành
+        </button>
+        <button class="nav-tab-btn" data-tab="tab-portfolio" role="tab" aria-selected="false" id="nav-portfolio">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          Danh Mục 500 KH
+        </button>
+        <button class="nav-tab-btn" data-tab="tab-policy" role="tab" aria-selected="false" id="nav-policy">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Policy & Biểu Mẫu
+        </button>
+        <button class="nav-tab-btn" data-tab="tab-playground" role="tab" aria-selected="false" id="nav-playground">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          Prompt & Decision Log
+        </button>
+        <button class="nav-tab-btn" data-tab="tab-rubric" role="tab" aria-selected="false" id="nav-rubric">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          Rubric & Phản Biện
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="main-content">
+
+    <!-- HERO OVERVIEW BANNER -->
+    <section class="hero-banner">
+      <h2 class="hero-title" id="course-title">AI Trong Quản Lý Và Xử Lý Nợ Ngân Hàng</h2>
+      <p class="hero-subtitle" id="course-subtitle">
+        Khung đào tạo thực chiến 12 buổi: Phân rã bài toán, làm chủ 4 công cụ AI (ChatGPT, Gemini, NotebookLM, Gamma), kiểm soát ảo giác dữ liệu và xây dựng bằng chứng kiểm toán (Audit Trail).
+      </p>
+      
+      <div class="hero-stats-grid">
+        <div class="hero-stat-card">
+          <div class="stat-label">Tổng Dư Nợ Danh Mục</div>
+          <div class="stat-value" id="stat-outstanding">221,4 Tỷ</div>
+          <div class="stat-sub">VND (Dataset 500 KH)</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="stat-label">Khách Hàng Quá Hạn</div>
+          <div class="stat-value" id="stat-overdue">437 / 500</div>
+          <div class="stat-sub">DPD > 0 (87.4%)</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="stat-label">Ưu Tiên Khẩn Cấp (P1)</div>
+          <div class="stat-value" id="stat-p1">106 KH</div>
+          <div class="stat-sub">Cần xử lý ngay trong ngày</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="stat-label">DPD Trung Bình</div>
+          <div class="stat-value" id="stat-avg-dpd">42.4 Ngày</div>
+          <div class="stat-sub">Quá hạn sâu (>=90d): 92 KH</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 1: 12 BUỔI THỰC HÀNH (CURRICULUM MATRIX)
+         ==================================================================== -->
+    <section id="tab-curriculum" class="tab-pane active" role="tabpanel" aria-labelledby="nav-curriculum">
+      <div class="section-header">
+        <div class="section-title-group">
+          <h2>Lộ Trình 12 Tình Huống Thực Hành Thực Chiến</h2>
+          <p>Mỗi buổi học là một áp lực công việc thực tế tại ngân hàng. Nhấn vào từng thẻ để xem chi tiết bối cảnh, prompt và sản phẩm đầu ra.</p>
+        </div>
+      </div>
+
+      <div class="sessions-grid" id="sessions-container">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 2: KHÁM PHÁ DANH MỤC 500 KHÁCH HÀNG (PORTFOLIO EXPLORER)
+         ==================================================================== -->
+    <section id="tab-portfolio" class="tab-pane" role="tabpanel" aria-labelledby="nav-portfolio">
+      <div class="section-header">
+        <div class="section-title-group">
+          <h2>Khám Phá & Tra Cứu Danh Mục 500 Khách Hàng</h2>
+          <p>Tương tác trực tiếp với dữ liệu 500 hồ sơ vay: tìm kiếm, lọc theo DPD, mức ưu tiên chuẩn, xem chi tiết 18 trường và đề xuất xử lý.</p>
+        </div>
+      </div>
+
+      <!-- FILTER CONTROLS -->
+      <div class="filter-bar">
+        <div class="search-input-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="cust-search" class="search-input" placeholder="Tìm theo Mã KH (KH0001...) hoặc Tên khách hàng...">
+        </div>
+
+        <select id="filter-priority" class="filter-select">
+          <option value="">Tất cả Mức Ưu Tiên</option>
+          <option value="P1 - Rất cao">P1 - Rất cao</option>
+          <option value="P2 - Cao">P2 - Cao</option>
+          <option value="P3 - Trung bình">P3 - Trung bình</option>
+          <option value="P4 - Theo dõi">P4 - Theo dõi</option>
+        </select>
+
+        <select id="filter-dpd" class="filter-select">
+          <option value="">Tất cả DPD (Số ngày quá hạn)</option>
+          <option value="dpd-0">DPD = 0 (Trong hạn)</option>
+          <option value="dpd-1-9">DPD 1 - 9 ngày</option>
+          <option value="dpd-10-89">DPD 10 - 89 ngày</option>
+          <option value="dpd-90-plus">DPD >= 90 ngày (Quá hạn sâu)</option>
+        </select>
+
+        <select id="filter-product" class="filter-select">
+          <option value="">Tất cả Sản Phẩm Vay</option>
+          <option value="Vay thế chấp nhà ở">Thế chấp nhà ở</option>
+          <option value="Vay hộ kinh doanh">Hộ kinh doanh</option>
+          <option value="Vay mua xe">Mua xe</option>
+          <option value="Vay tiêu dùng tín chấp">Tiêu dùng tín chấp</option>
+          <option value="Thẻ tín dụng">Thẻ tín dụng</option>
+        </select>
+
+        <button id="btn-reset-filters" class="btn btn-outline btn-sm">Đặt Lại</button>
+      </div>
+
+      <!-- CUSTOMERS TABLE -->
+      <div class="table-container">
+        <table class="data-table" id="customers-table">
+          <thead>
+            <tr>
+              <th>Mã KH</th>
+              <th>Khách Hàng</th>
+              <th>Sản Phẩm</th>
+              <th>Dư Nợ (Triệu)</th>
+              <th>DPD (Ngày)</th>
+              <th>Thu Nhập</th>
+              <th>Liên Hệ</th>
+              <th>Khó Khăn</th>
+              <th>Ưu Tiên</th>
+              <th>Thao Tác</th>
+            </tr>
+          </thead>
+          <tbody id="customers-tbody">
+            <!-- Rendered by js/app.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PAGINATION BAR -->
+      <div class="pagination-bar">
+        <div id="pagination-info">Hiển thị 1 - 25 trong tổng số 500 khách hàng</div>
+        <div class="page-controls">
+          <button id="btn-prev-page" class="btn btn-outline btn-sm">Trước</button>
+          <span id="page-num-display" style="padding: 0 8px; font-weight: 600;">1 / 20</span>
+          <button id="btn-next-page" class="btn btn-outline btn-sm">Sau</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 3: POLICY & BIỂU MẪU (POLICY & TEMPLATES)
+         ==================================================================== -->
+    <section id="tab-policy" class="tab-pane" role="tabpanel" aria-labelledby="nav-policy">
+      <div class="section-header">
+        <div class="section-title-group">
+          <h2>Sổ Tay Chính Sách & Kho Biểu Mẫu Nghiệp Vụ</h2>
+          <p>Tài liệu chuẩn mực (Ground Truth) dùng để nạp vào NotebookLM trích dẫn căn cứ và dạy AI (Few-shot prompting).</p>
+        </div>
+      </div>
+
+      <div class="policy-grid">
+        <!-- LEFT: POLICY BOOK -->
+        <div class="policy-col">
+          <div class="policy-card">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              5 Nguyên Tắc Cốt Lõi Khi Dùng AI
+            </h3>
+            <ul class="principles-list" id="policy-principles-list">
+              <!-- Rendered by js/app.js -->
+            </ul>
+
+            <div class="alert-noninferable">
+              <h4>CẢNH BÁO CẤM SUY DIỄN (Non-inferable Attributes)</h4>
+              <p id="policy-noninferable"></p>
+            </div>
+          </div>
+
+          <div class="policy-card">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              Quy Trình Kiểm Soát AI 6 Bước
+            </h3>
+            <div id="policy-workflow-list" style="display: flex; flex-direction: column; gap: 8px;">
+              <!-- Rendered by js/app.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: TEMPLATES -->
+        <div class="templates-col" id="templates-container">
+          <!-- Rendered by js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 4: PROMPT PLAYGROUND & DECISION LOG
+         ==================================================================== -->
+    <section id="tab-playground" class="tab-pane" role="tabpanel" aria-labelledby="nav-playground">
+      <div class="section-header">
+        <div class="section-title-group">
+          <h2>Phòng Thực Hành Prompt & Nhật Ký Kiểm Toán Quyết Định</h2>
+          <p>Mô phỏng phản hồi từ 4 công cụ AI, phân loại dữ liệu Fact/Inference/Missing Data và xuất bản nhật ký kiểm toán AI Decision Log.</p>
+        </div>
+      </div>
+
+      <div class="playground-layout">
+        <!-- LEFT: PROMPT BUILDER -->
+        <div class="playground-panel">
+          <div class="form-group">
+            <label class="form-label" for="pg-session-select">Chọn Tình Huống Thực Hành:</label>
+            <select id="pg-session-select" class="form-select">
+              <!-- Options populated by js/app.js -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Chọn Công Cụ AI Mục Tiêu:</label>
+            <div class="tool-choice-wrap">
+              <button class="tool-choice-btn active" data-tool="ChatGPT">ChatGPT</button>
+              <button class="tool-choice-btn" data-tool="Gemini">Gemini</button>
+              <button class="tool-choice-btn" data-tool="NotebookLM">NotebookLM</button>
+              <button class="tool-choice-btn" data-tool="Gamma">Gamma</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label class="form-label" style="margin-bottom: 0;">Câu Lệnh Prompt:</label>
+              <div style="display: flex; gap: 6px;">
+                <button id="btn-load-basic-prompt" class="btn btn-outline btn-sm">Mẫu Cơ Bản</button>
+                <button id="btn-load-adv-prompt" class="btn btn-primary btn-sm">Mẫu Nâng Cao</button>
+              </div>
+            </div>
+            <textarea id="pg-prompt-input" class="form-textarea" placeholder="Nhập câu lệnh prompt tại đây..."></textarea>
+          </div>
+
+          <button id="btn-run-simulation" class="btn btn-primary" style="width: 100%;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Chạy Thử Nghiệm Mô Phỏng AI
+          </button>
+        </div>
+
+        <!-- RIGHT: SIMULATION OUTPUT & AUDIT TAGGER -->
+        <div class="playground-panel">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <h4 style="font-size: 1rem;">Kết Quả Phản Hồi Từ AI</h4>
+            <div class="tagger-toolbar">
+              <span style="font-size: 0.75rem; color: var(--text-secondary); margin-right: 4px;">Công cụ gắn nhãn:</span>
+              <button class="tagger-btn btn-tag-fact" id="tag-fact">+ Fact</button>
+              <button class="tagger-btn btn-tag-infer" id="tag-infer">+ Inference</button>
+              <button class="tagger-btn btn-tag-gap" id="tag-gap">+ Missing Data</button>
+            </div>
+          </div>
+
+          <div id="pg-output-box" class="prompt-box" style="min-height: 240px; max-height: 380px; overflow-y: auto;">
+            <p style="color: var(--text-muted); font-style: italic;">Nhấn "Chạy Thử Nghiệm Mô Phỏng AI" để xem phản hồi của công cụ được chọn và phân tích rủi ro ảo giác.</p>
+          </div>
+
+          <div style="margin-top: 12px; display: flex; justify-content: flex-end; gap: 8px;">
+            <button id="btn-add-to-log" class="btn btn-outline btn-sm" disabled>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              Lưu Vào AI Decision Log
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIVE AI DECISION LOG TABLE -->
+      <div class="log-table-wrap">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+          <h3 style="font-size: 1.1rem;">Nhật Ký Kiểm Toán Quyết Định (AI Decision Log - Mẫu 5)</h3>
+          <button id="btn-export-log" class="btn btn-outline btn-sm">Xuất File CSV</button>
+        </div>
+        <div class="table-container" style="margin-bottom: 0;">
+          <table class="data-table" id="decision-log-table">
+            <thead>
+              <tr>
+                <th>Tình Huống</th>
+                <th>Công Cụ</th>
+                <th>Prompt Tóm Tắt</th>
+                <th>Kết Quả AI</th>
+                <th>Kiểm Tra (Fact/Infer/Gap)</th>
+                <th>Quyết Định Cuối</th>
+              </tr>
+            </thead>
+            <tbody id="decision-log-tbody">
+              <tr>
+                <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 24px;">Chưa có bản ghi nào. Hãy chạy mô phỏng và lưu vào nhật ký.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 5: RUBRIC & PHẢN BIỆN (ASSESSMENT & DEFENSE)
+         ==================================================================== -->
+    <section id="tab-rubric" class="tab-pane" role="tabpanel" aria-labelledby="nav-rubric">
+      <div class="section-header">
+        <div class="section-title-group">
+          <h2>Thang Điểm Rubric & Bộ Câu Hỏi Phản Biện</h2>
+          <p>Tiêu chuẩn đánh giá 100 điểm của Giảng viên, 15 câu hỏi bảo vệ quyết định và các cảnh báo đỏ (Red Flags).</p>
+        </div>
+      </div>
+
+      <!-- RUBRIC CALCULATOR CARD -->
+      <div class="rubric-calc-card">
+        <h3 style="margin-bottom: var(--spacing-md); color: var(--primary-color);">Bảng Tự Đánh Giá Năng Lực (Rubric 100 Điểm)</h3>
+        
+        <div id="rubric-items-container">
+          <!-- Rendered by js/app.js -->
+        </div>
+
+        <div class="rubric-score-display">
+          <div>
+            <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-secondary);">Xếp Loại Thành Thạo:</span>
+            <div id="rubric-level-badge" class="badge badge-p1" style="font-size: 0.85rem; margin-left: 8px;">Cần Cải Thiện</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary);">Tổng Điểm Đạt Được</div>
+            <div class="total-score-val" id="rubric-total-score">0 / 100</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15 DEFENSE QUESTIONS & RED FLAGS -->
+      <div class="policy-grid">
+        <div class="policy-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            15 Câu Hỏi Phản Biện Giảng Viên Hay Hỏi
+          </h3>
+          <p style="font-size: 0.85rem; margin-bottom: var(--spacing-md);">Học viên phải sẵn sàng trả lời các câu hỏi này để chứng minh không phụ thuộc mù quáng vào AI:</p>
+          <div class="questions-accordion" id="defense-questions-list">
+            <!-- Rendered by js/app.js -->
+          </div>
+        </div>
+
+        <div class="policy-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            Danh Mục Cảnh Báo Đỏ (Red Flags)
+          </h3>
+          <p style="font-size: 0.85rem; margin-bottom: var(--spacing-md);">Khi gặp các dấu hiệu sau, bắt buộc dừng lại và chuyển trạng thái <strong>Needs Human Review</strong>:</p>
+          <ul class="principles-list" id="red-flags-list">
+            <!-- Rendered by js/app.js -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       MODALS
+       ==================================================================== -->
+  <!-- SESSION DETAIL MODAL -->
+  <div id="session-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span id="modal-session-time" class="session-time">08:00</span>
+          <h3 id="modal-session-title" style="margin-top: 4px;">Chi Tiết Tình Huống</h3>
+        </div>
+        <button class="btn-close" id="btn-close-session-modal" aria-label="Đóng">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-session-body">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="btn-modal-dismiss">Đóng</button>
+        <button class="btn btn-primary" id="btn-modal-to-playground">Mở Trong Playground</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOMER DETAIL MODAL -->
+  <div id="customer-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span id="modal-cust-id" class="badge badge-p1">KH0001</span>
+          <h3 id="modal-cust-name" style="margin-top: 4px;">Tên Khách Hàng</h3>
+        </div>
+        <button class="btn-close" id="btn-close-customer-modal" aria-label="Đóng">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-cust-body">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="btn-close-cust-modal-btn">Đóng</button>
+        <button class="btn btn-primary" id="btn-cust-copy-info">Sao Chép Thông Tin Hồ Sơ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
