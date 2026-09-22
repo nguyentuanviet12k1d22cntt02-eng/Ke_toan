@@ -258,7 +258,13 @@
         <!-- LEFT: PROMPT BUILDER -->
         <div class="playground-panel">
           <div class="form-group">
-            <label class="form-label" for="pg-session-select">Chọn Tình Huống Thực Hành:</label>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label class="form-label" for="pg-session-select" style="margin-bottom: 0;">Chọn Tình Huống Thực Hành:</label>
+              <a href="00_STUDENT_Dataset_500KH.xlsx" download="00_STUDENT_Dataset_500KH.xlsx" class="btn btn-outline btn-sm" style="text-decoration: none; display: inline-flex; align-items: center; gap: 4px; font-size: 0.75rem; padding: 4px 10px;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Tải Dataset 500 KH (.xlsx)
+              </a>
+            </div>
             <select id="pg-session-select" class="form-select">
               <!-- Options populated by js/app.js -->
             </select>
@@ -419,9 +425,15 @@
       <div class="modal-body" id="modal-session-body">
         <!-- Rendered dynamically -->
       </div>
-      <div class="modal-footer">
-        <button class="btn btn-outline" id="btn-modal-dismiss">Đóng</button>
-        <button class="btn btn-primary" id="btn-modal-to-playground">Mở Trong Playground</button>
+      <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+        <a href="00_STUDENT_Dataset_500KH.xlsx" download="00_STUDENT_Dataset_500KH.xlsx" class="btn btn-outline btn-sm" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Tải Dataset 500 KH (.xlsx)
+        </a>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-outline" id="btn-modal-dismiss">Đóng</button>
+          <button class="btn btn-primary" id="btn-modal-to-playground">Mở Trong Playground</button>
+        </div>
       </div>
     </div>
   </div>
