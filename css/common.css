@@ -139,25 +139,28 @@ button, input, select, textarea {
 }
 
 .header-inner {
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: var(--spacing-sm) var(--spacing-lg);
+  padding: 8px var(--spacing-lg);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-md);
+  min-height: 56px;
 }
 
 .brand-group {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .brand-logo {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-md);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
   background: var(--primary-color);
   color: #ffffff;
   display: flex;
@@ -165,55 +168,69 @@ button, input, select, textarea {
   justify-content: center;
   font-weight: 700;
   font-family: var(--font-heading);
-  font-size: 1.25rem;
-  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.3);
+  font-size: 1.1rem;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.25);
+  flex-shrink: 0;
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .brand-info h1 {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 2px;
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .brand-info p {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
   font-weight: 500;
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .nav-tabs {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: 2px;
   background: var(--bg-subtle);
-  padding: 4px;
-  border-radius: var(--radius-lg);
+  padding: 3px;
+  border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
+  flex-shrink: 0;
 }
 
 .nav-tab-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border-radius: var(--radius-md);
+  gap: 5px;
+  padding: 6px 11px;
+  border-radius: var(--radius-sm);
   border: none;
   background: transparent;
   color: var(--text-secondary);
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 0.825rem;
   cursor: pointer;
   transition: var(--transition-fast);
   white-space: nowrap;
 }
 
 .nav-tab-btn svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   stroke: currentColor;
   stroke-width: 2;
   fill: none;
+  flex-shrink: 0;
 }
 
 .nav-tab-btn:hover {
@@ -226,6 +243,19 @@ button, input, select, textarea {
   color: var(--primary-color);
   font-weight: 600;
   box-shadow: var(--shadow-sm);
+}
+
+.header-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 13px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
 }
 
 /* ==========================================================================
@@ -446,14 +476,33 @@ button, input, select, textarea {
 }
 
 /* Responsive Menu */
+@media (max-width: 1240px) {
+  .brand-info p {
+    display: none; /* Hide secondary subtitle on smaller laptop screens so header stays uncrowded */
+  }
+}
+
 @media (max-width: 1024px) {
   .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 10px var(--spacing-md);
+    gap: 12px;
+  }
+  .brand-group {
+    order: 1;
+  }
+  .header-download-btn {
+    order: 2;
+    margin-left: auto;
   }
   .nav-tabs {
+    order: 3;
     width: 100%;
     overflow-x: auto;
-    padding-bottom: 6px;
+    scrollbar-width: none;
+    padding: 3px;
+  }
+  .nav-tabs::-webkit-scrollbar {
+    display: none;
   }
 }
